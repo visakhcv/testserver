@@ -9,7 +9,7 @@ const server=express()
 
 
 
-const port=9000 || process.env.PORT
+const port= process.env.PORT
 server.use(cors())
 server.use(bodyParser.json({ limit: 10 * 1024 * 1024 }))
 server.use(bodyParser.urlencoded({ limit: 10 * 1024 * 1024 }))
