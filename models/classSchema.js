@@ -1,6 +1,6 @@
 const mongoose= require('mongoose')
 
-const postSchema=new mongoose.Schema({
+const classSchema=new mongoose.Schema({
     heading:{
         type:String,
         required:true,
@@ -8,9 +8,13 @@ const postSchema=new mongoose.Schema({
     image:{
         type:String,
         required:true
+    },
+    content:{
+        type:String,
+        required:true
     }
 
 },{timestamps:true})
 
-const posts=new mongoose.model('posts',postSchema)
-module.exports = posts
+const classes=new mongoose.model('classes',classSchema)
+module.exports = classes

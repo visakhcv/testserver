@@ -2,13 +2,13 @@ const posts = require('../models/postSchema')
 
 
 exports.toPost = async (req, res) => {
-    const { heading, content, image} = req.body
+    const { heading, image} = req.body
     // const file=req.Image[0]
     // const result = await s3uploadv2(file)
     // res.status(202).json(result)
     try {
             const newposts = new posts({
-                heading, content, image
+                heading, image
             })
             await newposts.save()
     
@@ -32,6 +32,7 @@ exports.getPost= async (req,res)=>{
 
 exports.deletePost =async (req,res)=>{
         const {id}= req.body
+        console.log(id)
     try{
         const remainingposts= await posts.deleteOne({_id:id})
         res.status(200).json('Deleted Successfully')
@@ -39,4 +40,6 @@ exports.deletePost =async (req,res)=>{
         res.status(403).json(err)
     }
 }
+
+
 
