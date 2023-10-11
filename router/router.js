@@ -14,6 +14,6 @@ router.get('/getclasses',classController.getClass)
 router.get('/',(req,res)=>res.status(200).send("helloworld"))
 
 
-router.post('/yoga/deletepost',postController.deletePost)
+router.delete('/yoga/deletepost',postController.deletePost)
 
 module.exports = router

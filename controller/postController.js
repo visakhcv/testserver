@@ -32,7 +32,6 @@ exports.getPost= async (req,res)=>{
 
 exports.deletePost =async (req,res)=>{
         const {id}= req.body
-        console.log(id)
     try{
         const remainingposts= await posts.deleteOne({_id:id})
         res.status(200).json('Deleted Successfully')
