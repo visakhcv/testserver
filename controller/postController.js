@@ -3,9 +3,8 @@ const posts = require('../models/postSchema')
 
 exports.toPost = async (req, res) => {
     const { heading, image} = req.body
-    // const file=req.Image[0]
-    // const result = await s3uploadv2(file)
-    // res.status(202).json(result)
+    console.log(heading,image);
+    console.log('success');
     try {
             const newposts = new posts({
                 heading, image

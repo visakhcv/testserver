@@ -1,16 +1,16 @@
 const multer = require('multer')
 
 // using multer define storage
-// const storage = multer.diskStorage({
-//     destination:(req,file,callback)=>{
-//         callback(null,'./uploads')
-//     },
-//     filename:(req,file,callback)=>{
-//         const filename =`image-${Date.now()}-${file.originalname}`
-//         callback(null,filename)
-//     }
-// })
-const storage= multer.memoryStorage()
+const storage = multer.diskStorage({
+    destination:(req,file,callback)=>{
+        callback(null,'./uploads')
+    },
+    filename:(req,file,callback)=>{
+        const filename =`image-${Date.now()}-${file.originalname}`
+        callback(null,filename)
+    }
+})
+// const storage= multer.memoryStorage()
 
 
 // filtering uploading files
